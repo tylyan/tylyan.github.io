@@ -1,0 +1,63 @@
+body {
+  width: 1400px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: black;
+}
+
+ul {
+  margin: 0;
+  display: -webkit-flex;
+  -webkit-justify-content: space-around;
+  text-align: center;
+}
+
+nav ul li a{
+  font-weight: lighter;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+  list-style: none;
+  display: inline-block;
+  margin: 0 25px;
+}
+
+nav ul li a:hover {
+  color: gray;
+}
+
+.wrap {
+  max-width: 100%;
+  text-shadow: -2px -2px 4px black, 2px 2px 4px black, 2px 0 4px black, 0px 2px 4px black;
+  width: 1400px;
+  height: 800px;
+  background-color: royalblue;
+  background: -webkit-linear-gradient(rgba(0,0,0,1), rgba(255,255,255,0) 50%), -webkit-linear-gradient(0deg, rgba(255,0,0,0.65) 50%, rgba(0,0,0,0.65) 50%), url("../img/Horse Rock.jpg");
+  background-size: cover;
+  background-position: center center;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  /*osition: relative;*/
+  box-shadow: 5px 5px 10px 5px gray, -3px -3px 10px gray;
+}
+
+.wrap > h1 {
+  text-shadow: -3px -3px 6px black, 3px 3px 5px black, 3px 0 5px black, 0px 3px 5px black;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 25%;
+  font-size: 12em;
+  text-transform: uppercase;
+  opacity: .8;
+}
+
+.wrap > h1:hover {
+  opacity: 1;
+}
+
+h1 > span {
+  color: rgba(255,0,0,0.6);
+}

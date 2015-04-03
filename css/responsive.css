@@ -1,0 +1,73 @@
+@media screen and (min-width: 480px) {
+  
+  /*******************************
+  PAGE: ABOUT
+  *******************************/
+
+  .profile-photo {
+    float: left;
+    margin: 0 5% 80px 0;
+  }
+
+
+
+  /*******************************
+  PAGE: CONTACT
+  *******************************/
+
+  #primary {
+    width: 50%;
+    float: left;
+    margin: 0 0 0 2.5%;
+  }
+
+  #secondary {
+    width: 40%;
+    float: right;
+  }
+}
+
+@media screen and (min-width: 660px) {
+
+  /*******************************
+  HEADER
+  *******************************/
+
+  nav {
+    float: right;
+    font-size: 1.25em;
+    margin-right: 5%;
+    text-align: right;
+    width: 45%;
+  }
+
+  nav a:hover {
+    font-size: 1em;
+  }
+
+  nav a.selected {
+    font-size: 1.25em;
+  }
+
+  #logo {
+    float: left;
+    margin-left: 5%;
+    text-align: left;
+    width: 45%;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 0.825em;
+    margin-bottom: 20px;
+  }
+
+  header {
+    margin-bottom: 60px;
+  }
+
+
+}
