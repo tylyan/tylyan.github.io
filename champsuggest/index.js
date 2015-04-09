@@ -118,7 +118,7 @@ function playingAgainst(champName){
 	$(".playingAgainst").html(against);
 }
 
-function capitalize(name){
+function capitalize(string){
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
