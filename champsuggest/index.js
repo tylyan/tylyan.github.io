@@ -8,6 +8,9 @@ var champions = ["Aatrox", "Ahri", "Akali", "Alistar", "Amumu", "Anivia", "Annie
 				 "Twisted Fate", "Udyr", "Urgot", "Varus", "Vayne", "Veigar", "Vel'Koz", "Vi", "Viktor", "Vladimir", "Volibear", "Warwick", "Wukong", "Xerath", 
 				 "Xin Zhao", "Yasuo", "Yorick", "Zac", "Zed", "Ziggs", "Zilean", "Zyra"];
 
+var noList = ["FUCK NO", "HE SUCKS DICK", "I FUCKING HATE THIS GUY", "NAH", "NEXT PLEASE", "HOW DO YOU PLAY THIS GUY"];
+var againstList = ["THAT BITCH!", "MOTHERFUCKER", "WHAT A DICK"];
+var tryList = ["WHY DON'T YOU FUCKING TRY", "LET'S GO WITH", "YOU CAN KICK HIS ASS WITH", "FREELO INCOMING"];
 var suggestList;
 var count = 0;
 var list;
@@ -37,7 +40,7 @@ function createList(){
 		var championName = champions[i];
 		var fileName = championName.replace("'", "").replace(".", "").replace(" ", "");
 		list += "<li class=\"listItem\" id=\"" + fileName + 
-					"\"> <a href=\"#\"> <img src=\"img/" + fileName + 
+					"\"> <a href=\"javascript:void(0)\"> <img src=\"img/" + fileName + 
 						".png\"> <div class=\"champ-name\">" + championName + 
 							"</div></a></li>";
 	}
@@ -60,8 +63,11 @@ function jGet(champName){
 	var url = "http://www.championselect.net/champions/" + champName;
 	jQuery.get(url, function(res){
 		var code = res["responseText"];
-		suggestList = parseList(code);
-		displaySuggestions(count);
+		parseList(code, function(champions){
+			suggestList = champions;
+			displaySuggestions(count);
+		});
+		
 		//$("body").html(code);
 	});
 }
@@ -91,6 +97,8 @@ function next(){
 	}else{
 		count++;
 	}
+	var nextText = noList[(Math.floor(Math.random() * noList.length)) + 1];
+	$("#next").html(nextText);
 	displaySuggestions(count);
 }
 
@@ -99,6 +107,8 @@ function next(){
 *Submits request for champion
 */
 function submit(){
+	var againstText = againstList[(Math.floor(Math.random() * againstList.length)) + 1];
+	$("#againstText").html(againstText);
 	var champName = $("#champName").val();
 	if (champName == ""){
 		console.log("error");
@@ -126,6 +136,8 @@ function capitalize(string){
 *Shifts screen to champ-suggest
 */
 function shiftChampSuggest(){
+	var tryText = tryList[(Math.floor(Math.random() * tryList.length)) + 1];
+	$("#tryText").html(tryText);
 	$(".champ-select").addClass("invis");
 	$(".champ-suggest").removeClass("invis");
 }
@@ -133,13 +145,14 @@ function shiftChampSuggest(){
 *Shifts screen to champ-select
 */
 function back(){
+	$("#champName").val("");
 	$(".champ-suggest").addClass("invis");
 	$(".champ-select").removeClass("invis");
 }
 /**
 *Parses the html returned and creates list of preferred champions
 */
-function parseList(html){
+function parseList(html, callback){
 	var champions = [];
 	//cut code to focus on weak block section only
 	var champName;
@@ -165,7 +178,7 @@ function parseList(html){
 	result = result.substring(newSectionI);
 	}
 	
-	return champions;
+	callback(champions);
 	
 	//console.log(result);
 }
