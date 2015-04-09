@@ -71,6 +71,7 @@ function jGet(champName){
 */
 function displaySuggestions(count){
 	var championName = suggestList[count].replace("-", " ");
+  championName = capitalize(championName);
 	var fileName = championName.replace("'", "").replace(".", "").replace(" ", "");
 	var suggest = "<div class=\"row\">";
 	count++;
@@ -115,6 +116,10 @@ function playingAgainst(champName){
 						"</div></div></div>"
 
 	$(".playingAgainst").html(against);
+}
+
+function capitalize(name){
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 /**
