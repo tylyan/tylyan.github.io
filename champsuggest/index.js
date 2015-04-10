@@ -11,9 +11,9 @@ var champions = ["Aatrox", "Ahri", "Akali", "Alistar", "Amumu", "Anivia", "Annie
 				 "Twisted Fate", "Udyr", "Urgot", "Varus", "Vayne", "Veigar", "Vel'Koz", "Vi", "Viktor", "Vladimir", "Volibear", "Warwick", "Wukong", "Xerath", 
 				 "Xin Zhao", "Yasuo", "Yorick", "Zac", "Zed", "Ziggs", "Zilean", "Zyra"];
 
-var noList = ["NO THANK YOU", "NEXT PLEASE", "I HATE THIS GUY", "NAH", "I DON'T HAVE THIS GUY", "REROLL"];
+var noList = ["NO THANK YOU", "NEXT PLEASE", "I HATE THIS GUY", "NAH", "I DON'T WANT THIS GUY", "REROLL"];
 var againstList = ["THAT TURD!", "HE SUCKS ANYWAYS", "THIS GUY?!"];
-var tryList = ["WHY DON'T YOU TRY PLAYING", "LET'S GO WITH", "YOU CAN KICK HIS BUTT WITH", "THIS GUY WILL WIN EASILY"];
+var tryList = ["WHY DON'T YOU TRY PLAYING", "LET'S GO WITH", "YOU CAN KICK HIS BUTT WITH", "THIS GUY WILL WIN EASILY, COUNTER HIM WITH"];
 var suggestList;
 var count = 0;
 var list;
@@ -36,7 +36,7 @@ function init(){
 *Creates the html lists for every champion
 */
 function createList(){
-	list = "<div class=\"row\"> <div class=\"large-12 columns\"> <ul class=\"small-block-grid-2 large-block-grid-8\">";
+	list = "<div class=\"row\"> <div class=\"large-12 columns\"> <ul class=\"small-block-grid-4 large-block-grid-8\">";
 
 
 	for (var i = 0; i < champions.length; i++){
