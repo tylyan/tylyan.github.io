@@ -13,7 +13,7 @@ var champions = ["Aatrox", "Ahri", "Akali", "Alistar", "Amumu", "Anivia", "Annie
 
 var noList = ["NO THANK YOU", "NEXT PLEASE", "I HATE THIS GUY", "NAH", "I DON'T WANT THIS GUY", "REROLL"];
 var againstList = ["THAT TURD!", "HE SUCKS ANYWAYS", "THIS GUY?!"];
-var tryList = ["WHY DON'T YOU TRY PLAYING", "LET'S GO WITH", "YOU CAN KICK HIS BUTT WITH", "THIS GUY WILL WIN EASILY, COUNTER HIM WITH"];
+var tryList = ["WHY DON'T YOU TRY PLAYING", "LET'S GO WITH", "YOU CAN KICK HIS BUTT WITH", "THIS GUY WILL WIN EASILY", "COUNTER HIM WITH"];
 var suggestList;
 var count = 0;
 var list;
