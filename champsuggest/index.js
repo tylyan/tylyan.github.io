@@ -1,3 +1,6 @@
+/*
+*hard coded this for now, will update with riotgames API to fetch champ info
+*/
 var champions = ["Aatrox", "Ahri", "Akali", "Alistar", "Amumu", "Anivia", "Annie", "Ashe", "Azir", "Bard", "Blitzcrank", "Brand", "Braum", "Caitlyn", "Cassiopeia",
 				 "Cho'Gath", "Corki", "Darius", "Diana", "Draven", "Dr. Mundo", "Elise", "Evelynn", "Ezreal", "Fiddlesticks", "Fiora", "Fizz", "Galio", "Gangplank",
 				 "Garen", "Gnar", "Gragas", "Graves", "Hecarim", "Heimerdinger", "Irelia", "Janna", "Jarvan IV", "Jax", "Jayce", "Jinx", "Kalista", "Karma", "Karthus",
@@ -8,9 +11,9 @@ var champions = ["Aatrox", "Ahri", "Akali", "Alistar", "Amumu", "Anivia", "Annie
 				 "Twisted Fate", "Udyr", "Urgot", "Varus", "Vayne", "Veigar", "Vel'Koz", "Vi", "Viktor", "Vladimir", "Volibear", "Warwick", "Wukong", "Xerath", 
 				 "Xin Zhao", "Yasuo", "Yorick", "Zac", "Zed", "Ziggs", "Zilean", "Zyra"];
 
-var noList = ["FUCK NO", "HE SUCKS DICK", "I FUCKING HATE THIS GUY", "NAH", "NEXT PLEASE", "HOW DO YOU PLAY THIS GUY"];
-var againstList = ["THAT BITCH!", "MOTHERFUCKER", "WHAT A DICK"];
-var tryList = ["WHY DON'T YOU FUCKING TRY", "LET'S GO WITH", "YOU CAN KICK HIS ASS WITH", "FREELO INCOMING"];
+var noList = ["NO THANK YOU", "NEXT PLEASE", "I HATE THIS GUY", "NAH", "I DON'T HAVE THIS GUY", "REROLL"];
+var againstList = ["THAT TURD!", "HE SUCKS ANYWAYS", "THIS GUY?!"];
+var tryList = ["WHY DON'T YOU TRY PLAYING", "LET'S GO WITH", "YOU CAN KICK HIS BUTT WITH", "THIS GUY WILL WIN EASILY"];
 var suggestList;
 var count = 0;
 var list;
@@ -110,6 +113,7 @@ function submit(){
 	var againstText = againstList[(Math.floor(Math.random() * againstList.length)) + 1];
 	$("#againstText").html(againstText);
 	var champName = $("#champName").val();
+  champName = capitalize(champName.replace(" ", "").replace("'", ""));
 	if (champName == ""){
 		console.log("error");
 		return;
