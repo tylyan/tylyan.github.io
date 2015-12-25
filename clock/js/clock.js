@@ -65,7 +65,8 @@ function startTime() {
     s = formatTime(s);
     var time = h + ":" + m + ":" + s + " " + a;
     var now = h + ":" + m + " " + a;
-    $('#time').text(time);
+    var h1 = '<h1>' + time + '</h1>';
+    $('#clock').text(time);
     checkAlarm(now);
     var t = setTimeout(startTime, 500);
 }
@@ -120,11 +121,13 @@ function toggleSelect(){
     
 }
 
+/** resets the selection to 7:00am **/
 function resetSelected(){
     $('#selectHour').children().removeAttr('selected');
     $('#selectMin').children().removeAttr('selected');
     $('#defaultHour').attr("selected", "selected");
 }
+
 
 /** Creates the drop-down selectors **/
 function createSelect(){

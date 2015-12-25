@@ -16,6 +16,20 @@ body{
 	margin-right: auto;
 }
 
+i{
+  font-size: 2em;
+  display: block;
+  opacity: 0.7;
+}
+
+#alarmButton{
+  font-size: 2em;
+}
+
+.glyphicon-off{
+  margin-top: 10px;
+}
+
 /********************************/
 /* CENTER                       */
 /********************************/
@@ -61,34 +75,62 @@ body{
           justify-content : center;
 }
 
-i{
-	font-size: 2em;
-	display: block;
+/********************************/
+/* SELECT                       */
+/********************************/
+select{
+  border: 1px solid #111;
+  background: transparent;
+  width: 50px;
+  padding: 5px;
+  font-size: 1.25em;
+  border: 1px solid #fff;
+  height: 34px;
+  color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  opacity: 0.7;
 }
 
-#alarmButton{
-	font-size: 2em;
+option{
+  color:grey;
+  opacity: 0.7;
 }
 
-.glyphicon-off{
-	margin-top: 10px;
+#clock, a, a:visited, i{
+  opacity: 0.7;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+#clock:hover, a:hover, i:hover{
+  opacity: 1; 
 }
 
 /********************************/
 /* COLORS                       */
 /********************************/
-#time{
+#clock{
 	color: white;
-	font-size: 7em;
+  opacity: 0.7;
+	font-size: 7.5em;
+  -webkit-transition: color 2s;
+  transition: opacity 1s;
 }
 
 a, a:visited{
 	color: white;
-
+  margin-left: 5px;
 }
 
 a:hover{
-	color: black;
+	color: white;
+  text-decoration: none;
+}
+
+#meridiem{
+  font-size: 1.5em;
 }
 
 .visible{
