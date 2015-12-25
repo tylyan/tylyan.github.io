@@ -122,6 +122,7 @@ option{
 a, a:visited{
 	color: white;
   margin-left: 5px;
+  text-decoration: none;
 }
 
 a:hover{

@@ -126,6 +126,7 @@ function resetSelected(){
     $('#selectHour').children().removeAttr('selected');
     $('#selectMin').children().removeAttr('selected');
     $('#defaultHour').attr("selected", "selected");
+    $('#meridiem').text('am');
 }
 
 
