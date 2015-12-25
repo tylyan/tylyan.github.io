@@ -8,6 +8,7 @@ function init(){
     startTime();
     $('#selectHour').change(setAlarm);
     $('#selectMin').change(setAlarm);
+    $(document).bind('keydown', 'space', toggleSelect);
 }
 
 /** Sets the alarm **/
@@ -25,9 +26,22 @@ function removeAlarm(){
     console.log("Alarm is not set");
 }
 
+/** Rings the alarm **/
+function alarmRing(){
+    sound.play();
+}
+
+/** Stops the alarm **/
+function alarmStop(){
+    sound.pause();
+    sound.currentTime = 0;
+    alarm = "";
+    resetSelected();
+}
+
 function checkAlarm(now){
     if (now == alarm){
-        sound.play();
+        alarmRing();
         return true;
     }else{
         return false;
@@ -96,8 +110,15 @@ function toggleSelect(){
         $('#selectAlarm').removeClass('visible').addClass('invisible');
         $('#offButton').removeClass('visible').addClass('invisible');
         removeAlarm();
+        alarmStop();
     }
     
+}
+
+function resetSelected(){
+    $('#selectHour').children().removeAttr('selected');
+    $('#selectMin').children().removeAttr('selected');
+    $('#defaultHour').attr("selected", "selected");
 }
 
 /** Creates the drop-down selectors **/
@@ -107,7 +128,7 @@ function createSelect(){
     for (var h = 1; h < 13; h++){
         /* Just sets the default wake up time to 7:00am, looks better */
         if (h == 7)
-            selectHr += '<option value="' + formatTime(h) + '" selected="selected">' + formatTime(h) + '</option>';
+            selectHr += '<option id="defaultHour" value="' + formatTime(h) + '" selected="selected">' + formatTime(h) + '</option>';
         else
             selectHr += '<option value="' + formatTime(h) + '">' + formatTime(h) + '</option>';
     }
@@ -126,4 +147,3 @@ function createSelect(){
 }
 
 $(document).ready(init);
-
