@@ -8,7 +8,12 @@ function init(){
     startTime();
     $('#selectHour').change(setAlarm);
     $('#selectMin').change(setAlarm);
-    $(document).bind('keydown', 'space', toggleSelect);
+    $(document).keypress(function (e){
+        if (e.keyCode === 0 || e.keyCode === 32){
+            e.preventDefault();
+            toggleSelect();
+        }
+    });
 }
 
 /** Sets the alarm **/
