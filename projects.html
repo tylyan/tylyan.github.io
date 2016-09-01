@@ -63,6 +63,9 @@
                         <a href="http://www.yukcancode.com">Blog</a>
                     </li>
                     <li>
+                        <a href="resume.pdf" target="_blank">Resume</a>
+                    </li>
+                    <li>
                         <a href="contact.html">Contact</a>
                     </li>
                 </ul>
@@ -92,19 +95,38 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Below are a few projects that I thought worthy enough to mention.  Other projects not listed mostly include school assignments and small test programs.</p>
+                <p>Here you can read about some projects that I have developed - whether it be on my own free time, at hackathons, for work, or for school.  However, this is not a complete list.  Feel free to check out my <a href="http://github.com/tylyan">GitHub</a> to see more projects that are not listed below.</p>
                 <ul class="projects">
+                    <li>
+                        <h2>Speaking Sensibly</h2>
+                        <p>Speaking Sensibly is a project that I had the honor of being a part of during the Major League Hacking Prime Spring 2016 Hackathon.  The project consisted of a mobile app client as well as a web application portal.  Speaking Sensibly revolved around the Tanvas touch technology that allowed users to feel texture on smooth surface using haptic feedback.  The goal of Speaking Sensibly is to help patients diagnosed with Autism Spectrum Disorder familiarize with objects that they may be sensitive to.</p>
+                        <p>This project was <span class="hilite">awarded 2nd place</span> for the Best Touch-controlled UI, presented by Tanvas.</p>
+                        <p>The web application portion of the project was written in <span class="hilite">TypeScript, HTML, CSS</span>. The frameworks that were used for this projects were <span class="hilite">Express and Angular 2.0</span>.</p>
+                        <p>A much more detailed description of this project is available <a href="http://devpost.com/software/speaking-sensibly">here</a>.</p>
+                    </li>
+                    <li>
+                        <h2>coverbot</h2>
+                        <p>coverbot is a bot I developed for my Slack team at Rutgers Office of Information Technology.  The purpose of the bot is to manage the communication between employees regarding shift coverages.  The bot is able to post announcements and direct message users based on commands sent to the bot.  This was a very fun project for me because I was able to scaffold the entire project from scratch - the only resource that I utilized was the official <span class="hilite">Slack Client API</span> documentation.  I also created parsing and validation functions, including unit testing functions for the bot.</p>
+                        <p>The entire bot was written using <span class="hilite">JavaScript</span>.  The only frameworks that I used for the bot are <span class="hilite">Mocha and Chai</span> for unit testing.</p>
+                        <p>Source code and documentation can be found on my GitHub <a href="http://github.com/tylyan/coverbot">here</a>.</p>
+                    </li>
+                    <li>
+                        <h2>Photo Album</h2>
+                        <p>Photo Album is a project that I developed for a class named Software Methodologies.  The project is a fully functional Photo Album that features a admin panel, user log in, as well as persistent data.  The administrator is has the ability to create or delete users.  Users have the ability to create albums and upload photos with optional tags.  The user can also search for photos by tag and create a new photo album using the search results.  When the user logs out of their account, all the data is saved and persists even if the program is closed.</p>
+                        <p>The class Software Methodologies places an emphasis on proper software development practices and techniques.  As a result, this project was written keeping the best practices in mind.  The photo album was written completely in <span class="hilite">Java 8 and JavaFX</span>.  Some practices that I kept in mind while writing the photo album included <span class="hilite">object oriented programming, MVC design pattern, singletons, and modular code.</p>
+                        <p>The source code for this project can be found <a href="http://github.com/tylyan/PhotoAlbum48">here</a>.</p>
+                    </li>
                     <li>
                         <h2>SOCRATES</h2>
                         <p>SOCRATES stands for SOcial and CRowdsourced AcTivities Extraction System.  The intention of this platform is to be a one stop shop for researchers interested in studying social media.  Users are able to query data from several social media platforms such as Twitter, Facebook, Youtube, New York Times, and Reddit.  In addition to aggregating the data, SOCRATES also allows the user to analyze the data using statistical and textual functions as well as visually explore the data using graphs.</p>
-                        <p>The languages that I came across in this project was <span class="hilite">JavaScript, HTML, CSS, Python, and php</span>.  <span>MongoDB</span> was the database used and <span>d3.js</span> produced the graphs.</p>
+                        <p>The languages that I came across in this project was <span class="hilite">JavaScript, HTML, CSS, Python, and php</span>.  <span class="hilite">MongoDB</span> was the database used and <span class="hilite">d3.js</span> produced the graphs.</p>
                         <p>You can find out more information about this project <a href="http://peopleanalytics.org/socrates/index.php">here</a>.</p>
                     </li>
                     <li>
                         <h2>Multiprocess Bank Server/Client</h2>
                         <p>An <em>awesome</em> project that I did for a class called Systems Programming!  Normally, I wouldn't want to include coursework on here, but I had such a great time on this one and learned SO much from this one project that I just had to.</p>
                         <p>This program started a bank server that contained persistent data for a bank.  Clients are then able to connect to the server via the hostname and port number.  Each successful connection spawns a new process that handles the client session.  During a client session, the client is able to open, start, credit, debit, and retrieve the balance for a bank account.  A bank account may only be in session by one client at a time, and all other clients will wait on that account until the first client finishes its session.</p>
-                        <p>The functionality of the bank accounts was simple.  The exciting part about this project was <span class="hilite">socket programming, multithreaded programming, multiprocess programming, mutex locks, shared memory, and memory maps.</span>  Lastly, I was able to keep with good software design principles: each function/thread had one responsibility and they were able to change internally without effecting other parts of the code.</p>
+                        <p>The functionality of the bank accounts was simple.  The exciting part about this project was <span class="hilite">socket programming, multithreaded programming, multiprocess programming, mutex locks, shared memory, and memory maps</span>.  Lastly, I was able to keep with good software design principles: each function/thread had one responsibility and they were able to change internally without effecting other parts of the code.</p>
                         <p>Take a look at the source code <a href="https://github.com/tylyan/MPBankServer">here</a>.</p>
                     </li>
                     <li>
