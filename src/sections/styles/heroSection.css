@@ -1,0 +1,40 @@
+.hero {
+	padding: var(--space-6) 0 var(--space-16);
+}
+
+.hero-name {
+	font-size: var(--text-2xl);
+	font-weight: 600;
+	margin-bottom: var(--space-1);
+}
+
+.hero-title {
+	color: var(--text-secondary);
+	margin-bottom: var(--space-4);
+}
+
+.hero-description {
+	color: var(--text-secondary);
+	margin-bottom: var(--space-4);
+	max-width: 540px;
+	line-height: 1.6;
+}
+
+.hero-links {
+	display: flex;
+	gap: var(--space-4);
+	font-size: var(--text-lg);
+}
+
+.hero-links a {
+	color: var(--text-muted);
+	transition: color 0.15s ease;
+}
+
+.hero-links a:hover {
+	color: var(--text-primary);
+}
+
+.hero-note {
+	color: var(--text-muted);
+}

@@ -1,69 +1,73 @@
-@import "../../../data/styles.css";
-
-.article {
+.article-card {
 	display: flex;
-}
-
-.article a {
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--space-6);
+	background-color: var(--card-bg);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--card-shadow);
 	text-decoration: none;
+	transition: box-shadow var(--transition-fast),
+		transform var(--transition-fast);
 }
 
-.article-left-side {
-	min-width: 20%;
-	max-width: 20%;
+.article-card:hover {
+	box-shadow: var(--card-shadow-hover);
+	transform: translateY(-2px);
 }
 
-.article-right-side {
-	flex-basis: 80%;
-	min-width: 700px;
-	mix-blend-mode: normal;
-	border-radius: 20px;
-	opacity: 0.8;
-	padding: 30px;
-}
-
-.article-right-side:hover {
-	background: #fafafa;
-	opacity: 1;
-	transition: background-color 0.3s ease-in-out;
+.article-content {
+	flex: 1;
 }
 
 .article-date {
-	padding-top: 30px;
-	font-size: 15px;
-	color: var(--tertiary-color);
+	display: inline-block;
+	font-size: var(--text-sm);
+	color: var(--text-tertiary);
+	margin-bottom: var(--space-2);
 }
 
 .article-title {
-	color: #000000;
-	font-size: 16px;
+	font-size: var(--text-lg);
 	font-weight: 600;
+	color: var(--text-primary);
+	margin-bottom: var(--space-2);
+	line-height: 1.4;
 }
 
 .article-description {
-	padding-top: 10px;
-	font-size: 12px;
-	color: var(--secondary-color);
-	font-weight: 480;
-	line-height: 25px;
+	font-size: var(--text-base);
+	color: var(--text-secondary);
+	line-height: 1.6;
+	margin: 0;
 }
 
-.article-link {
-	padding-top: 10px;
-	font-size: 14px;
-	color: var(--link-color);
-	font-weight: 700;
+.article-arrow {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	margin-left: var(--space-4);
+	color: var(--text-tertiary);
+	transition: color var(--transition-fast),
+		transform var(--transition-fast);
 }
 
-@media (max-width: 1024px) {
-	.article-left-side {
-		min-width: 10%;
-		max-width: 10%;
+.article-card:hover .article-arrow {
+	color: var(--accent-primary);
+	transform: translateX(4px);
+}
+
+@media (max-width: 600px) {
+	.article-card {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 
-	.article-right-side {
-		flex-basis: 90%;
-		min-width: 85%;
-		max-width: 85%;
+	.article-arrow {
+		margin-left: 0;
+		margin-top: var(--space-4);
 	}
 }

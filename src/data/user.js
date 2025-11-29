@@ -16,14 +16,14 @@ const INFO = {
 	},
 
 	homepage: {
-		title: "I'm Tommy Yan, a Software Engineer",
+		title: "Software Engineer",
 		description:
-			"Whether it be a customer-facing web app, an automation script for developers, or even a daily Spanish word-of-the-day text for myself, I'm passionate about designing solutions and building software that serves people.",
+			"I build software that serves people. Now amplified by AI.",
 	},
 
 	about: {
 		title: "More About Me",
-		description: "I'm a software engiuneer ",
+		description: "I'm a software engineer",
 	},
 
 	articles: {
@@ -140,36 +140,6 @@ const INFO = {
 			],
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 		},
-		{
-			title: "Web Development Intern",
-			company: "Rutgers InfoSeeking Group",
-			location: "New Brunswick, NJ",
-			start_date: "June 2016",
-			end_date: "August 2016",
-			description: "",
-			bullet_points: [],
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-		},
-		{
-			title: "Cybersurety Specialist",
-			company: "New Jersey Air National Guard",
-			location: "McGuire Air Force Base, NJ",
-			start_date: "June 2016",
-			end_date: "January 2019",
-			description: "",
-			bullet_points: [],
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-		},
-		{
-			title: "Infantryman",
-			company: "New Jersey Army National Guard",
-			location: "Woodbridge, NJ",
-			start_date: "January 2013",
-			end_date: "June 2016",
-			description: "",
-			bullet_points: [],
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-		},
 	],
 	education: [
 		{
@@ -177,14 +147,14 @@ const INFO = {
 			school: "Georgia Intitute of Technology",
 			location: "Atlanta, GA",
 			grad_date: "May 2022",
-			description: "Specialization in Machine Learning",
+			description: "Machine Learning",
 		},
 		{
 			degree: "Bachelor of Science in Computer Science",
 			school: "Rutgers University",
 			location: "New Brunswick, NJ",
 			grad_date: "December 2016",
-			description: "Cybersecurity Track",
+			description: "Cybersecurity",
 		},
 	],
 };

@@ -1,0 +1,13 @@
+.theme-toggle {
+	font-size: var(--text-lg);
+	color: var(--text-muted);
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: var(--space-2);
+	transition: color 0.15s ease;
+}
+
+.theme-toggle:hover {
+	color: var(--text-primary);
+}
