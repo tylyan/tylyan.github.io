@@ -2,13 +2,16 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faMedal } from "@fortawesome/free-solid-svg-icons";
+import RainbowText from "../components/common/RainbowText";
 import INFO from "../data/user";
 import "./styles/heroSection.css";
 
 const HeroSection = () => {
 	return (
 		<section id="hero" className="hero">
-			<h1 className="hero-name">{INFO.main.name}</h1>
+			<h1 className="hero-name">
+				<RainbowText>{INFO.main.name}</RainbowText>
+			</h1>
 			<p className="hero-title">{INFO.homepage.title}</p>
 			<p className="hero-description">{INFO.homepage.description}</p>
 			<div className="hero-links">

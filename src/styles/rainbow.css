@@ -1,0 +1,123 @@
+/* Rainbow Gradient Mouse-Proximity Effect */
+
+.rainbow-effect {
+	--rainbow-x: 50%;
+	--rainbow-y: 50%;
+	--rainbow-intensity: 0;
+
+	position: relative;
+}
+
+.rainbow-effect::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		135deg,
+		#ffb3ba 0%,
+		#ffdfba 20%,
+		#ffffba 40%,
+		#baffc9 60%,
+		#bae1ff 80%,
+		#d4baff 100%
+	);
+	background-size: 200% 200%;
+	background-position: var(--rainbow-x) var(--rainbow-y);
+	opacity: var(--rainbow-intensity);
+	transition: opacity 0.5s ease-out;
+	pointer-events: none;
+	border-radius: inherit;
+	mix-blend-mode: overlay;
+}
+
+/* Text-specific rainbow effect - outline/glow style */
+.rainbow-text {
+	--rainbow-x: 50%;
+	--rainbow-y: 50%;
+	--rainbow-intensity: 0;
+
+	position: relative;
+	display: inline-block;
+}
+
+/* Outline glow layer behind text */
+.rainbow-text::before {
+	content: attr(data-text);
+	position: absolute;
+	inset: 0;
+	color: transparent;
+	background: linear-gradient(
+		135deg,
+		#ffb3ba 0%,
+		#ffdfba 20%,
+		#ffffba 40%,
+		#baffc9 60%,
+		#bae1ff 80%,
+		#d4baff 100%
+	);
+	background-size: 200% 200%;
+	background-position: var(--rainbow-x) var(--rainbow-y);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-stroke: 3px transparent;
+	filter: blur(1px);
+	opacity: var(--rainbow-intensity);
+	transition: opacity 0.5s ease-out;
+	pointer-events: none;
+	z-index: -1;
+}
+
+/* Icon-specific rainbow effect */
+.rainbow-icon {
+	--rainbow-x: 50%;
+	--rainbow-y: 50%;
+	--rainbow-intensity: 0;
+
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.rainbow-icon svg {
+	position: relative;
+	z-index: 1;
+}
+
+.rainbow-icon::after {
+	content: "";
+	position: absolute;
+	inset: -4px;
+	background: linear-gradient(
+		135deg,
+		#ffb3ba 0%,
+		#ffdfba 20%,
+		#ffffba 40%,
+		#baffc9 60%,
+		#bae1ff 80%,
+		#d4baff 100%
+	);
+	background-size: 200% 200%;
+	background-position: var(--rainbow-x) var(--rainbow-y);
+	opacity: var(--rainbow-intensity);
+	transition: opacity 0.5s ease-out;
+	pointer-events: none;
+	border-radius: 50%;
+	filter: blur(8px);
+	z-index: 0;
+}
+
+/* Light mode - increase saturation */
+[data-theme="light"] .rainbow-effect::before,
+[data-theme="light"] .rainbow-text::before,
+[data-theme="light"] .rainbow-icon::after {
+	filter: blur(6px) saturate(1.3);
+}
+
+/* Dark mode - reduce intensity */
+[data-theme="dark"] .rainbow-effect::before,
+[data-theme="dark"] .rainbow-text::before,
+[data-theme="dark"] .rainbow-icon::after {
+	opacity: calc(var(--rainbow-intensity) * 0.7);
+	filter: blur(8px);
+}

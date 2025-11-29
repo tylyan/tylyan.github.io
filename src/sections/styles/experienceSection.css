@@ -55,11 +55,15 @@
 	width: 20px;
 	text-align: center;
 	color: var(--text-muted);
-	transition: transform 0.2s ease;
+	transition: transform 0.2s ease, color 0.15s ease;
 }
 
 .exp-toggle.open {
 	transform: rotate(180deg);
+}
+
+.exp-row.clickable:hover .exp-toggle {
+	color: var(--text-primary);
 }
 
 .exp-bullets {

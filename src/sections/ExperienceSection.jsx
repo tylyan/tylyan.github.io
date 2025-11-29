@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import RainbowIcon from "../components/common/RainbowIcon";
 import INFO from "../data/user";
 import "./styles/experienceSection.css";
 
@@ -20,7 +21,9 @@ const ExperienceItem = ({ experience, defaultExpanded = false }) => {
 				<span className="exp-date">{experience.start_date} – {experience.end_date}</span>
 				{hasBullets && (
 					<span className={`exp-toggle ${isExpanded ? "open" : ""}`}>
-						<FontAwesomeIcon icon={faChevronDown} />
+						<RainbowIcon>
+							<FontAwesomeIcon icon={faChevronDown} />
+						</RainbowIcon>
 					</span>
 				)}
 			</button>
