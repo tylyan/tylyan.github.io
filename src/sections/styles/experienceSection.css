@@ -17,7 +17,7 @@
 
 .exp-row {
 	display: grid;
-	grid-template-columns: 1fr 1fr auto auto;
+	grid-template-columns: 100px 1fr auto auto;
 	gap: var(--space-4);
 	align-items: center;
 	width: 100%;
@@ -40,6 +40,7 @@
 
 .exp-company {
 	font-weight: 500;
+	min-width: 100px;
 }
 
 .exp-title {
@@ -56,6 +57,11 @@
 	text-align: center;
 	color: var(--text-muted);
 	transition: transform 0.2s ease, color 0.15s ease;
+}
+
+.exp-chevron {
+	width: 1rem;
+	height: 1rem;
 }
 
 .exp-toggle.open {

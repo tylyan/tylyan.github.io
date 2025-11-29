@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 import "./style/article.css";
 
@@ -16,7 +15,7 @@ const Article = (props) => {
 				<p className="article-description">{description}</p>
 			</div>
 			<div className="article-arrow">
-				<FontAwesomeIcon icon={faArrowRight} />
+				<ArrowRightIcon className="article-arrow-icon" />
 			</div>
 		</Link>
 	);

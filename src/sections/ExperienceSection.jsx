@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import RainbowIcon from "../components/common/RainbowIcon";
 import INFO from "../data/user";
 import "./styles/experienceSection.css";
@@ -22,7 +21,7 @@ const ExperienceItem = ({ experience, defaultExpanded = false }) => {
 				{hasBullets && (
 					<span className={`exp-toggle ${isExpanded ? "open" : ""}`}>
 						<RainbowIcon>
-							<FontAwesomeIcon icon={faChevronDown} />
+							<ChevronDownIcon className="exp-chevron" />
 						</RainbowIcon>
 					</span>
 				)}

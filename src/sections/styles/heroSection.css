@@ -23,18 +23,25 @@
 .hero-links {
 	display: flex;
 	gap: var(--space-4);
-	font-size: var(--text-lg);
+	align-items: center;
 }
 
 .hero-links a {
 	color: var(--text-muted);
 	transition: color 0.15s ease;
+	display: flex;
 }
 
 .hero-links a:hover {
 	color: var(--text-primary);
 }
 
+.hero-icon {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
 .hero-note {
 	color: var(--text-muted);
+	display: flex;
 }

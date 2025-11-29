@@ -31,9 +31,10 @@ const Portfolio = () => {
 	return (
 		<>
 			<Helmet>
-				<title>{INFO.main.title}</title>
+				<title>{`${INFO.main.title} | Software Engineer`}</title>
 				<meta name="description" content={currentSEO?.description} />
 				<meta name="keywords" content={currentSEO?.keywords?.join(", ")} />
+				<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 			</Helmet>
 
 			<div className="page">
