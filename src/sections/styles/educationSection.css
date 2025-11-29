@@ -1,0 +1,26 @@
+.edu-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-4);
+}
+
+.edu-item {
+	padding: var(--space-3);
+	margin: 0 calc(-1 * var(--space-3));
+	border-radius: var(--space-2);
+	transition: background-color 0.15s ease;
+}
+
+.edu-item:hover {
+	background-color: var(--bg-hover);
+}
+
+.edu-degree {
+	font-weight: 500;
+	margin-bottom: var(--space-1);
+}
+
+.edu-meta {
+	font-size: var(--text-sm);
+	color: var(--text-secondary);
+}

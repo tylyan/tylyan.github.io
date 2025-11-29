@@ -1,0 +1,18 @@
+.notfound {
+	padding: var(--space-16) 0;
+}
+
+.notfound h1 {
+	font-size: var(--text-2xl);
+	margin-bottom: var(--space-2);
+}
+
+.notfound p {
+	color: var(--text-secondary);
+	margin-bottom: var(--space-4);
+}
+
+.notfound a {
+	font-size: var(--text-sm);
+	color: var(--accent);
+}

@@ -1,0 +1,109 @@
+.exp-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-3);
+}
+
+.exp-item {
+	padding: var(--space-3);
+	margin: 0 calc(-1 * var(--space-3));
+	border-radius: var(--space-2);
+	transition: background-color 0.15s ease;
+}
+
+.exp-item:hover {
+	background-color: var(--bg-hover);
+}
+
+.exp-row {
+	display: grid;
+	grid-template-columns: 100px 1fr auto auto;
+	gap: var(--space-4);
+	align-items: center;
+	width: 100%;
+	padding: var(--space-2) 0;
+	background: none;
+	border: none;
+	text-align: left;
+	font-size: var(--text-sm);
+	color: var(--text-primary);
+	cursor: default;
+}
+
+.exp-row.clickable {
+	cursor: pointer;
+}
+
+.exp-row.clickable:hover {
+	/* Hover handled by parent .exp-item */
+}
+
+.exp-company {
+	font-weight: 500;
+	min-width: 100px;
+}
+
+.exp-title {
+	color: var(--text-secondary);
+}
+
+.exp-date {
+	color: var(--text-muted);
+	font-size: var(--text-sm);
+}
+
+.exp-toggle {
+	width: 20px;
+	text-align: center;
+	color: var(--text-muted);
+	transition: transform 0.2s ease, color 0.15s ease;
+}
+
+.exp-chevron {
+	width: 1rem;
+	height: 1rem;
+}
+
+.exp-toggle.open {
+	transform: rotate(180deg);
+}
+
+.exp-row.clickable:hover .exp-toggle {
+	color: var(--text-primary);
+}
+
+.exp-bullets {
+	padding: var(--space-2) 0 var(--space-4) var(--space-4);
+	margin: 0;
+	list-style: disc;
+	list-style-position: outside;
+}
+
+.exp-bullets li {
+	font-size: var(--text-sm);
+	color: var(--text-secondary);
+	margin-bottom: var(--space-2);
+	line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+	.exp-row {
+		grid-template-columns: 1fr auto;
+		gap: var(--space-1);
+	}
+
+	.exp-title {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.exp-date {
+		grid-column: 1;
+		grid-row: 3;
+	}
+
+	.exp-toggle {
+		grid-row: 1 / 4;
+		align-self: center;
+	}
+}
