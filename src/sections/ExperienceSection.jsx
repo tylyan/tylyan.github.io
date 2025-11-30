@@ -4,15 +4,14 @@ import RainbowIcon from "../components/common/RainbowIcon";
 import INFO from "../data/user";
 import "./styles/experienceSection.css";
 
-const ExperienceItem = ({ experience, defaultExpanded = false }) => {
-	const [isExpanded, setIsExpanded] = useState(defaultExpanded);
+const ExperienceItem = ({ experience, isExpanded, onToggle }) => {
 	const hasBullets = experience.bullet_points?.length > 0;
 
 	return (
 		<div className="exp-item">
 			<button
 				className={`exp-row ${hasBullets ? "clickable" : ""}`}
-				onClick={() => hasBullets && setIsExpanded(!isExpanded)}
+				onClick={() => hasBullets && onToggle()}
 				disabled={!hasBullets}
 			>
 				<span className="exp-company">{experience.company}</span>
@@ -27,23 +26,70 @@ const ExperienceItem = ({ experience, defaultExpanded = false }) => {
 				)}
 			</button>
 			{hasBullets && isExpanded && (
-				<ul className="exp-bullets">
-					{experience.bullet_points.map((bullet, i) => (
-						<li key={i}>{bullet}</li>
-					))}
-				</ul>
+				<>
+					{experience.tech_stack?.length > 0 && (
+						<p className="exp-tech">{experience.tech_stack.join(", ")}</p>
+					)}
+					<ul className="exp-bullets">
+						{experience.bullet_points.map((bullet, i) => (
+							<li key={i}>{bullet}</li>
+						))}
+					</ul>
+				</>
 			)}
 		</div>
 	);
 };
 
 const ExperienceSection = () => {
+	const expandableIndices = INFO.experience
+		.map((exp, index) => (exp.bullet_points?.length > 0 ? index : null))
+		.filter((index) => index !== null);
+
+	const [expandedItems, setExpandedItems] = useState(new Set());
+
+	const allExpanded = expandableIndices.every((index) => expandedItems.has(index));
+
+	const toggleItem = (index) => {
+		setExpandedItems((prev) => {
+			const next = new Set(prev);
+			if (next.has(index)) {
+				next.delete(index);
+			} else {
+				next.add(index);
+			}
+			return next;
+		});
+	};
+
+	const toggleAll = () => {
+		if (allExpanded) {
+			setExpandedItems(new Set());
+		} else {
+			setExpandedItems(new Set(expandableIndices));
+		}
+	};
+
 	return (
 		<section id="experience" className="section">
-			<h2>Experience</h2>
+			<div className="section-header">
+				<h2>Experience</h2>
+				<button className="section-toggle" onClick={toggleAll}>
+					<span className={`exp-toggle ${allExpanded ? "open" : ""}`}>
+						<RainbowIcon>
+							<ChevronDownIcon className="exp-chevron" />
+						</RainbowIcon>
+					</span>
+				</button>
+			</div>
 			<div className="exp-list">
 				{INFO.experience.map((exp, index) => (
-					<ExperienceItem key={index} experience={exp} defaultExpanded={true} />
+					<ExperienceItem
+						key={index}
+						experience={exp}
+						isExpanded={expandedItems.has(index)}
+						onToggle={() => toggleItem(index)}
+					/>
 				))}
 			</div>
 		</section>
